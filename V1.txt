@@ -1,0 +1,138 @@
+//bool gameOver = false;
+
+    //int input;
+    //int messageIndex = 0;
+
+    //std::string introMessage = "You approach a large rock on the road. What do you do?";
+
+    //std::string optionA = "";
+    //std::string optionB = "";
+
+    ////GameLogic::goThroughDialogue() {
+
+    ////}
+
+    //while (!gameOver) {
+    //    //MessageNode
+    //    // message, a reference or pointer to the next node
+
+    //    if(messageIndex == 0){
+    //        printf("You approach a large rock on the road. What do you do?\n");
+    //        printf("Input 1 or 2 to make your choice:\n");
+    //        optionA = "1) Go around the rock.";
+    //        optionB = "2) Go over the rock.";
+    //        printf("%s\n", optionA.c_str());
+    //        printf("%s\n", optionB.c_str());
+
+    //        scanf_s("%d", &input);
+    //        printf("You chose: %d.\n", input);
+
+    //        if (input == 1) {
+    //            printf("You circle the rock and continue on your way.\n");
+    //            messageIndex++;
+    //        }
+    //        else if (input == 2) {
+    //            printf("You hop over the rock and onto the other side of the road, and continue walking.\n");
+    //            messageIndex++;
+    //        }
+    //        else {
+    //            printf("\nPlease introduce a valid choice.\n\n");
+    //        }
+    //    }
+    //    else if (messageIndex == 1) {
+
+    //        printf("As you continue walking, you see a wild hyena down the road feasting on fresh prey. It hasn't noticed you yet.\n");
+    //        optionA = "1) Sneak around the predator silently.";
+    //        optionB = "2) Scare the beast with your imposing physique.";
+    //        printf("%s\n", optionA.c_str());
+    //        printf("%s\n", optionB.c_str());
+
+    //        scanf_s("%d", &input);
+    //        printf("You chose: %d.\n", input);
+
+    //        if (input == 1) {
+    //            printf("Silent as a falling tree when no one's around, you pass the hyena undetected.\n");
+    //            messageIndex++;
+    //        }
+    //        else if (input == 2) {
+    //            printf("Seeing a terrifying opponent, the creatures yelps and runs off.\n");
+    //            messageIndex++;
+    //        }
+    //        else {
+    //            printf("\nPlease introduce a valid choice.\n\n");
+    //        }
+    //    }
+    //    else if (messageIndex == 2) {
+
+    //        printf("<description_text_3>.\n");
+    //        optionA = "1) OptionA_3.";
+    //        optionB = "2) OptionB_3.";
+    //        printf("%s\n", optionA.c_str());
+    //        printf("%s\n", optionB.c_str());
+
+    //        scanf_s("%d", &input);
+    //        printf("You chose: %d.\n", input);
+
+    //        if (input == 1) {
+    //            printf("Result_3A.\n");
+    //            messageIndex++;
+    //        }
+    //        else if (input == 2) {
+    //            printf("Result_3B.\n");
+    //            messageIndex++;
+    //        }
+    //        else {
+    //            printf("\nPlease introduce a valid choice.\n\n");
+    //        }
+    //    }
+    //    else if (messageIndex == 3) {
+
+    //        printf("<description_text_4>.\n");
+    //        optionA = "1) OptionA_4.";
+    //        optionB = "2) OptionB_4.";
+    //        printf("%s\n", optionA.c_str());
+    //        printf("%s\n", optionB.c_str());
+
+    //        scanf_s("%d", &input);
+    //        printf("You chose: %d.\n", input);
+
+    //        if (input == 1) {
+    //            printf("Result_4A.\n");
+    //            messageIndex++;
+    //        }
+    //        else if (input == 2) {
+    //            printf("Result_4B.\n");
+    //            messageIndex++;
+    //        }
+    //        else {
+    //            printf("\nPlease introduce a valid choice.\n\n");
+    //        }
+    //    }
+    //    else if (messageIndex == 4) {
+
+    //        printf("<description_text_5>.\n");
+    //        optionA = "1) OptionA_5.";
+    //        optionB = "2) OptionB_5.";
+    //        printf("%s\n", optionA.c_str());
+    //        printf("%s\n", optionB.c_str());
+
+    //        scanf_s("%d", &input);
+    //        printf("You chose: %d.\n", input);
+
+    //        if (input == 1) {
+    //            printf("Result_5A.\n");
+    //            messageIndex++;
+    //        }
+    //        else if (input == 2) {
+    //            printf("Result_5B.\n");
+    //            messageIndex++;
+    //        }
+    //        else {
+    //            printf("\nPlease introduce a valid choice.\n\n");
+    //        }
+    //    }
+    //    else {
+    //        printf("Your messageIndex has gone out of bounds.\n");
+    //        gameOver = true;
+    //    }
+    //}

@@ -1,0 +1,190 @@
+//class MessageNode {
+//private:
+//    int index;
+//
+//    std::string description = "";
+//
+//    std::string optionA = "";
+//    std::string optionB = "";
+//
+//    MessageOutcome* nextMessageA;
+//    MessageOutcome* nextMessageB;
+//
+//public:
+//    MessageNode(int index, const std::string& description, 
+//                const std::string& optionA, const std::string& optionB):
+//        index(index), description(description), optionA(optionA), optionB(optionB), 
+//        nextMessageA(nullptr),nextMessageB(nullptr) {}
+//    
+//    void displayMessage() const {
+//        //std::cout << "Index" << index << ":\n";
+//        std::cout << description << "\n";
+//        std::cout << "1. " << optionA << "\n";
+//        std::cout << "2. " << optionB << "\n";
+//    }
+//
+//    void setNextNodes(MessageOutcome* node) {
+//        nextMessageA = node;
+//        nextMessageB = node;
+//    }
+//
+//    void setNextNodes(MessageOutcome* node1, MessageOutcome* node2) {
+//        nextMessageA = node1;
+//        nextMessageB = node2;
+//    }
+//
+//
+//    virtual MessageNode* performOutcome(int choice, MessageNode* currentMessageNode) const {
+//        if (choice == 1 && nextMessageA != nullptr) {
+//            currentMessageNode = nextMessageA->PerformOutcome(choice, currentMessageNode);
+//        }
+//        else if (choice == 2 && nextMessageA != nullptr) {
+//            currentMessageNode = nextMessageB->PerformOutcome(choice, currentMessageNode);
+//        }
+//        else {
+//            std::cout << "Please introduce a valid choice.\n";
+//        }
+//        return currentMessageNode;
+//    }
+//};
+////--------------------------------------------------------------------
+////class RandomMessageNode : public MessageNode {
+////private:
+////    // Additional data members for random outcomes
+////    std::string randResA;
+////    std::string randResB;
+////
+////    double probabilityRandomOutcomeA;
+////    double probabilityRandomOutcomeB;
+////
+////    // Function to determine if a random outcome should occur based on probability
+////    bool shouldOccur(double probability) const {
+////        double randomValue = static_cast<double>(rand()) / RAND_MAX;
+////        return randomValue < probability;
+////    }
+////public:
+////    // Constructor
+////    RandomMessageNode(int index, const std::string & description,
+////        const std::string& choiceA, const std::string& choiceB,
+////        const std::string& resultA, const std::string& resultB,
+////        const std::string& randResA, const std::string& randResB,
+////        double probabilityRandomOutcomeA, double probabilityRandomOutcomeB)
+////        : MessageNode(index, description, choiceA, choiceB, resultA, resultB),
+////        randResA(randResA), randResB(randResB),
+////        probabilityRandomOutcomeA(probabilityRandomOutcomeA),
+////        probabilityRandomOutcomeB(probabilityRandomOutcomeB) {}
+////
+////    // Override base class function to perform custom random outcomes
+////    MessageNode* performOutcome(int choice, MessageNode* currentMessageNode) const override {
+////        if (choice == 1 && shouldOccur(probabilityRandomOutcomeA)) {
+////            std::cout << randResA <<"\n";
+////            currentMessageNode = getNextNode1();
+////        }
+////        else if (choice == 2 && shouldOccur(probabilityRandomOutcomeB)) {
+////            std::cout << randResB <<"\n";
+////            currentMessageNode = getNextNode2();
+////        }
+////        else {
+////            
+////            // Update current node based on user choice
+////            if (choice == 1) {
+////                std::cout << getResultA() << "\n";
+////                currentMessageNode = getNextNode1();
+////            }
+////            else if (choice == 2) {
+////                std::cout << getResultB() << "\n";
+////                currentMessageNode = getNextNode2();
+////            }
+////        }
+////        return currentMessageNode;
+////    }
+////};
+//
+//class MessageOutcome {
+//private:
+//    int index;
+//    std::string result;
+//    
+//    MessageNode* nextNode;
+//    
+//public:
+//    MessageOutcome(int index, std::string& result,
+//        MessageNode* nextNode) :
+//        index(index), result(result),  nextNode(nextNode)
+//    {}
+//
+//    std::string getResult() {
+//        return result;
+//    }
+//
+//    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode) {
+//        std::cout << getResult() << "\n";
+//        currentMessageNode = nextNode;
+//        //std::cout << index << "\n";
+//        return currentMessageNode;
+//    }
+//};
+//
+//
+//
+////---------------------------------------MAIN---------------------------------------
+//int main()
+//{
+//    srand(time(0));
+//
+//    int i = rand() % 1000 + 1;
+//    printf("Random number i is: %d\n", i);
+//
+//    MessageNode node1(1, "You approach a large rock on the road. What do you do?",
+//        "Go around the rock.",                                "Go over the rock.");
+//
+//    MessageNode node2(2, "As you continue walking, you see a wild hyena down the road feasting on fresh prey. It hasn't noticed you yet.",
+//        "Sneak around the predator silently.",                                                      "Scare the beast with your imposing physique.");
+//
+//    MessageOutcome outcome11(11, "You circle the rock and continue on your way.", node2);
+//    MessageOutcome outcome12(12, "You hop over the rock and onto the other side of the road, and continue walking.", node2);
+//  /*MessageNode node3(3, "<input bodyText_3>",
+//"optionA_3", "optionB_3",
+//"resultA_3", "resultB_3"); */
+
+/*RandomMessageNode node4(4, "<input bodyText_4>",
+    "optionA_4", "optionB_4",
+    "resultA_4", "resultB_4",
+    "You got lucky! You're going back to your favorite boulder!", "Hope you miss the hyena, because you circled back right to it!",
+        0.5, 0.5);*/
+
+
+        /*MessageNode node5(5, "<input bodyText_5>",
+            "optionA_5", "optionB_5",
+            "resultA_5", "resultB_5");*/
+
+            // Set next nodes for choices
+            //node1.setNextNodes(&node2);
+            //node2.setNextNodes(&node3, nullptr);
+            //node3.setNextNodes(&node5, &node1);
+            ////node4.setNextNodes(&node1, &node2);
+            //node5.setNextNodes(nullptr, nullptr);
+//
+//
+//    // Display the initial message
+//    MessageNode* currentMessageNode = &node1;
+//    while (currentMessageNode != nullptr) {
+//        currentMessageNode->displayMessage();
+//
+//        // Get user input (1 or 2)
+//        std::cout << "Enter your choice (1 or 2): ";
+//        int userChoice;
+//        std::cin >> userChoice;
+//
+//        // Update current node based on user choice
+//        currentMessageNode = currentMessageNode->performOutcome(userChoice, currentMessageNode);
+//
+//        if (currentMessageNode == nullptr) {
+//            std::cout << "The choice you have selected has a nullptr as its next node. Terminating program";
+//        }
+//    }
+//
+//
+//
+//    return 0;
+//}
