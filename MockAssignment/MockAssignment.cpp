@@ -19,8 +19,11 @@ int main() {
     Inventory* inventory = Inventory::getInstance("INVENTORY");
 
     // Nodes
-    MessageNode startNode(1, "You wake up in a mysterious forest. In front of you, there are two paths.",
+    MessageNode startNode(0, "You wake up in a mysterious forest. In front of you, there are two paths.",
         "Take the left path.", "Take the right path.");
+
+    MessageNode forestNode(1, "You are back in the forest in which you woke up on.",
+        "Take the left path going towards the altar.", "Take the right path towards the clifface.");
 
     MessageNode animalNoisesNode(2, "Going into the path, you hear the noises of some animals. You can see quadrupedal shapes on the road.",
         "Go down the road sneakily.", "Go back to where you came from.");
@@ -69,7 +72,7 @@ int main() {
     //Node 2
     RandomMessageOutcome randomAnimalNoisesOutcome(201, "You succesfully manage to sneak past the animals and go on.",
         "You accidentaly hit a rock as you go.\n The animals startle and run away. The path is clear for now, but they'll be back", 0.5f, &amuletAltarNode, &amuletAltarNode);
-    MessageOutcome goBackFromAnimals(202, "You go back to the forest.", &startNode);
+    MessageOutcome goBackFromAnimals(202, "You go back to the forest.", &forestNode);
 
     //Node 3
     AddItemOutcome addItemAmuletOutcome(301, "You pick up the old amulet and head down the side-path.", AncientAmulet, inventory, &sidePathNode);
@@ -84,8 +87,8 @@ int main() {
     MessageOutcome rockyRoadToROckDoors(502, "You continue forward and approach the clifface.", &rockDoorsNode);
 
     //Node 6
-    RandomMessageOutcome gladeClimbBacktrackOutcome(601, "You start climbing, grabbing roots and rocks, pulling yourself up.\n You eventually get back to the rocky road.",
-        "As you climb through the greenery, you lose the path that you were following.\n After stumbling for a bit, you see another path opening in front of you.", 0.3f, &rockyRoadNode, &animalNoisesNode);
+    RandomMessageOutcome gladeClimbBacktrackOutcome(601, "You start climbing, grabbing roots and rocks, pulling yourself up.\n You eventually get back to the forest.",
+        "As you climb through the greenery, you lose the path that you were following.\n After stumbling for a bit, you see another path opening in front of you.", 0.3f, &forestNode, &animalNoisesNode);
     MessageOutcome gladeToCampOutcome(602, "You turn towards the camp and head there.", &abandonedCampNode);
 
     //Node 7
@@ -99,7 +102,7 @@ int main() {
 
     //Node 9
     RandomItemOutcome campInvestigationOutcome(901, "You try to push through the bad feeling and keep looking, but you could swear you felt hands touching and pulling on you.\n You freak out and run back to the side path.",
-        "Despite the weird feelings, you push through and look for something of value.", 0.3f, &sidePathNode, &secretStashNode, EasterEgg);
+        "Despite the weird feelings, you push through and look for something of value.", 0.6f, &sidePathNode, &secretStashNode, EasterEgg);
     MessageOutcome campToDoorOutcome(902, "You don't trust this.\n You run for the nearby boulder as you could swear you heard faint breathing right behind you.", &rustyDoorNode);
 
     //Node 10
@@ -118,6 +121,7 @@ int main() {
 
     // Tying Nodes Together 
     startNode.setNextNodes(&LeftPathOutcome, &RightPathOutcome);
+    forestNode.setNextNodes(&LeftPathOutcome, &RightPathOutcome);
     animalNoisesNode.setNextNodes(&randomAnimalNoisesOutcome, &goBackFromAnimals);
     amuletAltarNode.setNextNodes(&addItemAmuletOutcome, &ignoreAmuletGoDownSidepath);
     sidePathNode.setNextNodes(&sidepathToGlade, &gotoAbandonedCamp);
