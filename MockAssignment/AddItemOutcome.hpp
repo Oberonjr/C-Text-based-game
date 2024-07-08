@@ -9,5 +9,5 @@ private:
     Inventory* inventory;
 public:
     AddItemOutcome(int index, const std::string& result, Item* itemToAdd, Inventory* inventory, MessageNode* nextNode);
-    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode) override;
+    virtual const MessageNode* PerformOutcome(int choice, const MessageNode* currentMessageNode) override;
 };

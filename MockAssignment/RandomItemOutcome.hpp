@@ -8,6 +8,6 @@ private:
     Item* newItem;
 
 public:
-    RandomItemOutcome(int index, const std::string& result, const std::string& randomResult, double probability, MessageNode* nextNode, MessageNode* randomNextNode, Item* newItem);
-    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode) override;
+    RandomItemOutcome(int index, const std::string& result, const std::string& randomResult, double probability, const MessageNode* nextNode, const MessageNode* randomNextNode, Item* newItem);
+    virtual const MessageNode* PerformOutcome(int choice, const MessageNode* currentMessageNode) override;
 };

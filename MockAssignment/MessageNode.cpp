@@ -25,15 +25,15 @@ std::string MessageNode::getResultB() const {
     return nextMessageB->getResult();
 }
 
-MessageNode* MessageNode::getNextNode1() const {
-    return nextMessageA->PerformOutcome(1, nullptr);
+const MessageNode* MessageNode::getNextNode1() const {
+    return nextMessageA->PerformOutcome(1, this);
 }
 
-MessageNode* MessageNode::getNextNode2() const {
-    return nextMessageB->PerformOutcome(2, nullptr);
+const MessageNode* MessageNode::getNextNode2() const {
+    return nextMessageB->PerformOutcome(2, this);
 }
 
-MessageNode* MessageNode::performOutcome(int choice, MessageNode* currentMessageNode) const {
+const MessageNode* MessageNode::performOutcome(int choice, MessageNode* currentMessageNode) const {
     if (choice == 1) {
         return getNextNode1();
     }
