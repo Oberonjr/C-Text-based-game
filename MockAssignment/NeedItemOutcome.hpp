@@ -8,7 +8,7 @@ private:
     const Item& requiredItem;
     Inventory* inventory;
 public:
-    NeedItemOutcome(int index, const std::string& result, const Item& requiredItem, Inventory* inventory, MessageNode* nextNode);
+    NeedItemOutcome(int index, const std::string& result, const Item& requiredItem, Inventory* inventory, const MessageNode* nextNode);
     const Item& getReqItem() const;
-    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode) override;
+    virtual const MessageNode* PerformOutcome(int choice, const MessageNode* currentMessageNode) override;
 };

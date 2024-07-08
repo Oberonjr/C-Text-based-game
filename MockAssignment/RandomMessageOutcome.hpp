@@ -6,12 +6,12 @@ class RandomMessageOutcome : public MessageOutcome {
 private:
     std::string randomResult;
     double probability;
-    MessageNode* randomNextNode;
+    const MessageNode* randomNextNode;
 
 public:
-    RandomMessageOutcome(int index, const std::string& result, const std::string& randomResult, double probability, MessageNode* nextNode, MessageNode* randomNextNode = nullptr);
+    RandomMessageOutcome(int index, const std::string& result, const std::string& randomResult, double probability,const MessageNode* nextNode, const MessageNode* randomNextNode = nullptr);
     std::string getRandomResult() const;
     double getProbability() const;
-    MessageNode* getNextRandomNode() const;
-    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode) override;
+    const MessageNode* getNextRandomNode() const;
+    virtual const MessageNode* PerformOutcome(int choice, const MessageNode* currentMessageNode) override;
 };

@@ -9,11 +9,11 @@ class MessageOutcome {
 private:
     int index;
     std::string result;
-    MessageNode* nextNode;
+    const MessageNode* nextNode;
 
 public:
-    MessageOutcome(int index, const std::string& result, MessageNode* nextNode);
+    MessageOutcome(int index, const std::string& result, const MessageNode* nextNode);
     std::string getResult() const;
-    MessageNode* getNextNode() const;
-    virtual MessageNode* PerformOutcome(int choice, MessageNode* currentMessageNode);
+    const MessageNode* getNextNode() const;
+    virtual const MessageNode* PerformOutcome(int choice, const MessageNode* currentMessageNode);
 };

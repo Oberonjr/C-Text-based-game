@@ -19,7 +19,7 @@ public:
     void setNextNodes(MessageOutcome* node1, MessageOutcome* node2);
     std::string getResultA() const;
     std::string getResultB() const;
-    MessageNode* getNextNode1() const;
-    MessageNode* getNextNode2() const;
-    virtual MessageNode* performOutcome(int choice, MessageNode* currentMessageNode) const;
+    const MessageNode* getNextNode1() const;
+    const MessageNode* getNextNode2() const;
+    virtual const MessageNode* performOutcome(int choice, MessageNode* currentMessageNode) const;
 };

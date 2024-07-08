@@ -1,10 +1,10 @@
 #include "RandomItemOutcome.hpp"
 
 // Implementation of RandomItemOutcome class
-RandomItemOutcome::RandomItemOutcome(int index, const std::string& result, const std::string& randomResult, double probability, MessageNode* nextNode, MessageNode* randomNextNode, Item* newItem)
+RandomItemOutcome::RandomItemOutcome(int index, const std::string& result, const std::string& randomResult, double probability, const MessageNode* nextNode, const MessageNode* randomNextNode, Item* newItem)
     : RandomMessageOutcome(index, result, randomResult, probability, nextNode, randomNextNode), newItem(std::move(newItem)) {}
 
-MessageNode* RandomItemOutcome::PerformOutcome(int choice, MessageNode* currentMessageNode) {
+const MessageNode* RandomItemOutcome::PerformOutcome(int choice, const MessageNode* currentMessageNode) {
     if (rand() / static_cast<double>(RAND_MAX) < getProbability()) {
         std::cout << getRandomResult() << "\n";
         if (getNextRandomNode() != nullptr) {

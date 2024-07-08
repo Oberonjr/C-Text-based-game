@@ -2,7 +2,7 @@
 
 
 // Implementation of RandomMessageOutcome class
-RandomMessageOutcome::RandomMessageOutcome(int index, const std::string& result, const std::string& randomResult, double probability, MessageNode* nextNode, MessageNode* randomNextNode)
+RandomMessageOutcome::RandomMessageOutcome(int index, const std::string& result, const std::string& randomResult, double probability, const MessageNode* nextNode, const MessageNode* randomNextNode)
     : MessageOutcome(index, result, nextNode), randomResult(randomResult), probability(probability), randomNextNode(randomNextNode) {}
 
 std::string RandomMessageOutcome::getRandomResult() const{
@@ -13,11 +13,11 @@ double RandomMessageOutcome::getProbability() const{
     return probability;
 }
 
-MessageNode* RandomMessageOutcome::getNextRandomNode() const{
+const MessageNode* RandomMessageOutcome::getNextRandomNode() const{
     return randomNextNode;
 }
 
-MessageNode* RandomMessageOutcome::PerformOutcome(int choice, MessageNode* currentMessageNode) {
+const MessageNode* RandomMessageOutcome::PerformOutcome(int choice, const MessageNode* currentMessageNode) {
     if (rand() / static_cast<double>(RAND_MAX) < probability) {
         std::cout << getRandomResult() << "\n";
         if (randomNextNode != nullptr) {
